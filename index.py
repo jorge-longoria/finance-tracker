@@ -19,6 +19,12 @@ if 'amount' in ARGS:
 else:
     args['amount'] = 'UNKNOWN'
 
+#Vendor
+if 'vendor' in ARGS:
+    args['vendor'] = ARGS['vendor'].value
+else:
+    args['vendor'] = 'UNKNOWN'
+
 #Category
 if 'category' in ARGS:
     args['category'] = ARGS['category'].value
@@ -54,7 +60,7 @@ cur = conn.cursor()
 
 if args['entry_type'] != 'UNKNOWN':
     #Read query file.
-    newTransaction = sql.SQL(open('sql/add-transaction.sql', 'r').read()).format(sql.Literal(args['entry_type']), sql.Literal(args['category']), sql.Literal(args['date'] +' '+ args['time']), sql.Literal(args['amount']))
+    newTransaction = sql.SQL(open('sql/add-transaction.sql', 'r').read()).format(sql.Literal(args['entry_type']), sql.Literal(args['category']), sql.Literal(args['date'] +' '+ args['time']), sql.Literal(args['amount']), sql.Literal(args['vendor']))
 
     #Execute the insert.
     cur.execute(newTransaction)
@@ -62,7 +68,7 @@ if args['entry_type'] != 'UNKNOWN':
 
 #Print HTML headers and content.
 print 'Content-Type: text/html\n'
-print args
+
 page_body = open('html/index.html', 'r').read()
 
 print page_body
