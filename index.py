@@ -57,7 +57,7 @@ if args['entry_type'] != 'UNKNOWN':
     newTransaction = sql.SQL(open('sql/add-transaction.sql', 'r').read()).format(sql.Literal(args['entry_type']), sql.Literal(args['category']), sql.Literal(args['date'] +' '+ args['time']), sql.Literal(args['amount']))
 
     #Execute the insert.
-    cur.execute(query1)
+    cur.execute(newTransaction)
 
 
 #Print HTML headers and content.
