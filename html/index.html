@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Finance Tracker</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/formStyle.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%; margin-left:15%;">
+        <h4>Enter Transactions</h4>
+        <form action="" method="get">
+
+            <!-- Quantity, Category, and Date Inputs
+            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <label for="amount">Amount:</label>
+            <input type="text" name="amount" id="amount" required pattern="[0-9]{0,10}.[0-9]{2}"></input>
+
+            <label for="category">Category:</label>
+            <select style="width:220px" name="category" id="category">
+              <!-- Populate with values from DB -->
+              <!-- {categoryOptions} -->
+              <option value="GROCERY">GROCERY</option>
+              <option value="AUTO">AUTO</option>
+              <option value="AUTO">STUDENT LOANS</option>
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="text" name="date" placeholder="2018-02-28" id="date"></input>
+
+            <label for="time">Time:</label>
+            <input type="text" name="time" placeholder="03:35:27" id="time"></input>
+
+            <!-- Debit / Credit Radio Buttons
+            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div>
+            <div class="entryTypeRadioButtonLeft">
+              <label for="entry_type">Debit:</label>
+              <input type="radio" value="DEBIT" name="entry_type" id="entry_type_debit" checked="checked"></input>
+            </div>
+
+            <div class="entryTypeRadioButtonRight">
+              <label for="entry_type">Credit:</label>
+              <input type="radio" value="CREDIT" name="entry_type" id="entry_type_credit"></input>
+            </div>
+          </div>
+
+          <br /><br /><br /><br />
+          <div class="submitButton">
+            <button class="button button-primary" type="submit">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,12 @@
+.entryTypeRadioButtonRight {
+  float:right;
+  margin-right:125px;
+}
+
+.entryTypeRadioButtonLeft {
+  float:left;
+}
+
+.submitButton {
+  margin-left: 15%;
+}
