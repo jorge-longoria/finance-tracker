@@ -1,3 +1,18 @@
+.amountInputField {
+  width:220px;
+}
+
+.dateInputField {
+  width:100px;
+  float:left;
+}
+
+.timeInputField {
+  width:100px;
+  float:right;
+  margin-right:100px;
+}
+
 .entryTypeRadioButtonRight {
   float:right;
   margin-right:125px;
