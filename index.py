@@ -37,12 +37,6 @@ if 'date' in ARGS:
 else:
     args['date'] = 'UNKNOWN'
 
-#Time
-if 'time' in ARGS:
-    args['time'] = ARGS['time'].value
-else:
-    args['time'] = 'UNKNOWN'
-
 #Entry Type
 if 'entry_type' in ARGS:
     args['entry_type'] = ARGS['entry_type'].value
@@ -60,7 +54,7 @@ cur = conn.cursor()
 
 if args['entry_type'] != 'UNKNOWN':
     #Read query file.
-    newTransaction = sql.SQL(open('sql/add-transaction.sql', 'r').read()).format(sql.Literal(args['entry_type']), sql.Literal(args['category']), sql.Literal(args['date'] +' '+ args['time']), sql.Literal(args['amount']), sql.Literal(args['vendor']))
+    newTransaction = sql.SQL(open('sql/add-transaction.sql', 'r').read()).format(sql.Literal(args['entry_type']), sql.Literal(args['category']), sql.Literal(args['date']), sql.Literal(args['amount']), sql.Literal(args['vendor']))
 
     #Execute the insert.
     cur.execute(newTransaction)
